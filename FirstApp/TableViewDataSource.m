@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TableViewDataSource.h"
+#import "GTNormalTableViewCell.h"
 
 @implementation TableViewDataSource
 
@@ -18,12 +19,13 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *tableCell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    GTNormalTableViewCell *tableCell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!tableCell) {
-        tableCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        tableCell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    tableCell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@", @(indexPath.row)];
-    tableCell.detailTextLabel.text = @"副标题";
+//    tableCell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@", @(indexPath.row)];
+//    tableCell.detailTextLabel.text = @"副标题";
+    [tableCell layoutCell];
     return tableCell;
 }
 
@@ -32,5 +34,9 @@
     UIViewController *subViewController = [[UIViewController alloc] init];
     subViewController.title = [NSString stringWithFormat:@"Title %@", @(indexPath.row)];
     [self.navigationController pushViewController:subViewController animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 @end
