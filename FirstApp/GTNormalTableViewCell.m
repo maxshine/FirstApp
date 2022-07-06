@@ -40,8 +40,20 @@
 //            self.timeLabel.backgroundColor = [UIColor redColor];
             self.timeLabel;
         })];
+        [self.contentView addSubview:({
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(250, 80, 30, 20)];
+            [button setTitle:@"X" forState:UIControlStateNormal];
+            [button setTitle:@"V" forState:UIControlStateHighlighted];
+            [button setBackgroundColor:[UIColor blueColor]];
+            [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+            button;
+        })];
     }
     return self;
+}
+
+- (void) buttonClick {
+    NSLog(@"button clicked");
 }
 
 - (void) layoutCell {
