@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "GTDetailViewController.h"
 
 @interface MyView: UIView
 @end
@@ -65,7 +66,7 @@
 }
 
 - (void)pushNavigationView {
-    UIViewController *viewController = [[UIViewController alloc] init];
+    GTDetailViewController *viewController = [[GTDetailViewController alloc] init];
     [viewController.view setBackgroundColor:[UIColor whiteColor]];
     viewController.navigationItem.title = @"新闻";
     viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧按钮" style:UIBarButtonItemStylePlain target:self action:nil];

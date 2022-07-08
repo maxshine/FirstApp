@@ -17,6 +17,7 @@
 		A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */; };
 		A971FBD1286AFF4300FED5A4 /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A971FBD0286AFF4300FED5A4 /* TableViewDataSource.m */; };
 		A99B234F287021E3000E8458 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99B234E287021E3000E8458 /* GTRecommendViewController.m */; };
+		A9AFFBE62877FC9A00A2D33B /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */; };
 		A9F5CFB2286DAB0A008E7533 /* GTChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F5CFB1286DAB0A008E7533 /* GTChatViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		A971FBD2286AFF6D00FED5A4 /* TableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewDataSource.h; sourceTree = "<group>"; };
 		A99B234D287021E3000E8458 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
 		A99B234E287021E3000E8458 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
+		A9AFFBE42877FC9A00A2D33B /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
+		A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		A9F5CFB0286DAB0A008E7533 /* GTChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTChatViewController.h; sourceTree = "<group>"; };
 		A9F5CFB1286DAB0A008E7533 /* GTChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTChatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +86,8 @@
 				A9F5CFB1286DAB0A008E7533 /* GTChatViewController.m */,
 				A908F159285F2C3800374FE4 /* ViewController.h */,
 				A908F15A285F2C3800374FE4 /* ViewController.m */,
+				A9AFFBE42877FC9A00A2D33B /* GTDetailViewController.h */,
+				A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */,
 				A908F15C285F2C3800374FE4 /* Main.storyboard */,
 				A908F15F285F2C3C00374FE4 /* Assets.xcassets */,
 				A908F161285F2C3C00374FE4 /* LaunchScreen.storyboard */,
@@ -172,6 +177,7 @@
 				A908F166285F2C3C00374FE4 /* main.m in Sources */,
 				A99B234F287021E3000E8458 /* GTRecommendViewController.m in Sources */,
 				A908F158285F2C3800374FE4 /* SceneDelegate.m in Sources */,
+				A9AFFBE62877FC9A00A2D33B /* GTDetailViewController.m in Sources */,
 				A971FBD1286AFF4300FED5A4 /* TableViewDataSource.m in Sources */,
 				A9F5CFB2286DAB0A008E7533 /* GTChatViewController.m in Sources */,
 			);

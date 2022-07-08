@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "TableViewDataSource.h"
 #import "GTNormalTableViewCell.h"
+#import "GTDetailViewController.h"
 
 @implementation TableViewDataSource
 
