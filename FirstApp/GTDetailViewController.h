@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GTDetailViewController : UIViewController <WKNavigationDelegate>
 
 @property(nonatomic, strong, readwrite) WKWebView* webView;
+@property(nonatomic, strong, readwrite) UIProgressView* progressView;
 
 @end
 
