@@ -6,10 +6,11 @@
 //
 #import <UIKit/UIKit.h>
 #import <UIKit/UITableView.h>
+#import "GTNormalTableViewCell.h"
 
 #ifndef TableViewDataSource_h
 #define TableViewDataSource_h
-@interface TableViewDataSource:UITableViewController
+@interface TableViewDataSource:UITableViewController <GTNormalTableViewCellDelegate>
 
 @end
 

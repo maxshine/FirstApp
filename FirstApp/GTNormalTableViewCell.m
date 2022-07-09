@@ -45,15 +45,19 @@
             [button setTitle:@"X" forState:UIControlStateNormal];
             [button setTitle:@"V" forState:UIControlStateHighlighted];
             [button setBackgroundColor:[UIColor blueColor]];
-            [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(deleteClick) forControlEvents:UIControlEventTouchUpInside];
+            self.deleteButton = button;
             button;
         })];
     }
     return self;
 }
 
-- (void) buttonClick {
+- (void) deleteClick {
     NSLog(@"button clicked");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+        [self.delegate tableViewCell:self clickDeleteButton: self.deleteButton];
+    }
 }
 
 - (void) layoutCell {

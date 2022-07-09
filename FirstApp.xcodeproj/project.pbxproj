@@ -14,6 +14,7 @@
 		A908F160285F2C3C00374FE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A908F15F285F2C3C00374FE4 /* Assets.xcassets */; };
 		A908F163285F2C3C00374FE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908F161285F2C3C00374FE4 /* LaunchScreen.storyboard */; };
 		A908F166285F2C3C00374FE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A908F165285F2C3C00374FE4 /* main.m */; };
+		A914AC4528795BBC002C2F32 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A914AC4428795BBC002C2F32 /* GTDeleteView.m */; };
 		A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */; };
 		A971FBD1286AFF4300FED5A4 /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A971FBD0286AFF4300FED5A4 /* TableViewDataSource.m */; };
 		A99B234F287021E3000E8458 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99B234E287021E3000E8458 /* GTRecommendViewController.m */; };
@@ -34,6 +35,8 @@
 		A908F162285F2C3C00374FE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A908F164285F2C3C00374FE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A908F165285F2C3C00374FE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A914AC4328795BBC002C2F32 /* GTDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteView.h; sourceTree = "<group>"; };
+		A914AC4428795BBC002C2F32 /* GTDeleteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteView.m; sourceTree = "<group>"; };
 		A93FFABB2872A06500142F8D /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		A971FBD0286AFF4300FED5A4 /* TableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDataSource.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				A971FBD2286AFF6D00FED5A4 /* TableViewDataSource.h */,
 				A93FFABB2872A06500142F8D /* GTNormalTableViewCell.h */,
 				A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */,
+				A914AC4328795BBC002C2F32 /* GTDeleteView.h */,
+				A914AC4428795BBC002C2F32 /* GTDeleteView.m */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				A908F166285F2C3C00374FE4 /* main.m in Sources */,
 				A99B234F287021E3000E8458 /* GTRecommendViewController.m in Sources */,
 				A908F158285F2C3800374FE4 /* SceneDelegate.m in Sources */,
+				A914AC4528795BBC002C2F32 /* GTDeleteView.m in Sources */,
 				A9AFFBE62877FC9A00A2D33B /* GTDetailViewController.m in Sources */,
 				A971FBD1286AFF4300FED5A4 /* TableViewDataSource.m in Sources */,
 				A9F5CFB2286DAB0A008E7533 /* GTChatViewController.m in Sources */,
