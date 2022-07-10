@@ -46,6 +46,10 @@
             [button setTitle:@"V" forState:UIControlStateHighlighted];
             [button setBackgroundColor:[UIColor blueColor]];
             [button addTarget:self action:@selector(deleteClick) forControlEvents:UIControlEventTouchUpInside];
+            button.layer.cornerRadius = 10;
+            button.layer.masksToBounds = YES;
+            button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            button.layer.borderWidth = 2;
             self.deleteButton = button;
             button;
         })];
