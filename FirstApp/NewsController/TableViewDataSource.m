@@ -11,7 +11,13 @@
 #import "GTDetailViewController.h"
 #import "GTDeleteView.h"
 
+
 @implementation TableViewDataSource
+
+- (void)viewDidLoad {
+    self.loader = [[GTListData alloc] init];
+    [self.loader loadListData];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
