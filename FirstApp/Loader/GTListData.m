@@ -6,6 +6,7 @@
 //
 
 #import "GTListData.h"
+#import <AFNetworking.h>
 
 @implementation GTListData
 
@@ -15,8 +16,18 @@
     NSURL *listURL = [NSURL URLWithString:urlString];
     __unused NSURLRequest *listRequest = [NSURLRequest requestWithURL:listURL];
     
+    [[AFHTTPSessionManager manager] GET:urlString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+    
     NSURLSession *urlSession = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:listRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSError *jsonError;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
         NSLog(@"");
     }];
     [dataTask resume];
