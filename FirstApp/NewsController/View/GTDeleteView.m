@@ -24,16 +24,16 @@
             UIView *backgroundView = [[UIView alloc] initWithFrame:self.bounds];
             [backgroundView setBackgroundColor:[UIColor blackColor]];
             backgroundView.alpha = 0.5;
-            [backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickButtion)]];
+            [backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteButton)]];
             self.backgroundView = backgroundView;
             self.backgroundView;
         })];
         [self addSubview:({
             UIButton *deleteButtion = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
             [deleteButtion setBackgroundColor:[UIColor blueColor]];
-            [deleteButtion addTarget:self action:@selector(clickButtion) forControlEvents:UIControlEventTouchUpInside];
-            self.deleteButtion = deleteButtion;
-            self.deleteButtion;
+            [deleteButtion addTarget:self action:@selector(deleteButtonAction) forControlEvents:UIControlEventTouchUpInside];
+            self.deleteButton = deleteButtion;
+            self.deleteButton;
         })];
     }
     return self;
@@ -44,10 +44,10 @@
 //    [UIView animateWithDuration:1.0f animations:^{
 //        self.deleteButtion.frame = CGRectMake((self.frame.size.width-200)/2, (self.frame.size.height-200)/2, 200, 200);
 //    }];
-    self.deleteButtion.frame = CGRectMake(point.x, point.y, 0, 0);
+    self.deleteButton.frame = CGRectMake(point.x, point.y, 0, 0);
     self.deleteBlock = [deleteBlock copy];
     [UIView animateWithDuration:1.0f delay:0.5f usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.deleteButtion.frame = CGRectMake((self.frame.size.width-200)/2, (self.frame.size.height-200)/2, 200, 200);
+        self.deleteButton.frame = CGRectMake((self.frame.size.width-200)/2, (self.frame.size.height-200)/2, 200, 200);
     } completion:^(BOOL finished) {
         NSLog(@"Animation finished");
     }];
@@ -57,7 +57,7 @@
     [self removeFromSuperview];
 }
 
-- (void) clickButtion {
+- (void) deleteButtonAction {
     if (self.deleteBlock) {
         self.deleteBlock();
     }

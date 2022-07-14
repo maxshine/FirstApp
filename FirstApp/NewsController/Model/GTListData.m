@@ -7,6 +7,7 @@
 
 #import "GTListData.h"
 #import <AFNetworking.h>
+#import "GTListItem.h""
 
 @implementation GTListData
 
@@ -28,6 +29,14 @@
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:listRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSError *jsonError;
         id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+#warning type checking
+        NSArray *dataArray = [(NSDictionary*)[(NSDictionary*) jsonObject objectForKey:@"result"] objectForKey:@"data"];
+        NSMutableArray *listItemArray = @[].mutableCopy;
+        for (NSDictionary *entry in dataArray) {
+            GTListItem * listItem = [[GTListItem alloc] init];
+            [listItem configWithDictionary:entry];
+            [listItemArray addObject:listItem];
+        }
         NSLog(@"");
     }];
     [dataTask resume];
