@@ -45,6 +45,12 @@
         });
     }];
     [dataTask resume];
+    [self _getSandBoxPath];
+}
+
+- (void) _getSandBoxPath {
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSLog(@"%@", pathArray);
 }
 
 @end
