@@ -9,9 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class GTListItem;
+typedef void(^GTListDataFinishBlock)(BOOL success, NSArray<GTListItem*> *dataArray);
+
+
 @interface GTListData : NSObject
 
-- (void) loadListData;
+- (void) loadListDataWithFinishBlock: (GTListDataFinishBlock)finishBlock;
 
 @end
 

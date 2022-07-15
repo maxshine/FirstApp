@@ -66,7 +66,7 @@
 }
 
 - (void)pushNavigationView {
-    GTDetailViewController *viewController = [[GTDetailViewController alloc] init];
+    GTDetailViewController *viewController = [[GTDetailViewController alloc] initWithUrlString:@"https://time.geekbang.org"];
     [viewController.view setBackgroundColor:[UIColor whiteColor]];
     viewController.navigationItem.title = @"新闻";
     viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧按钮" style:UIBarButtonItemStylePlain target:self action:nil];

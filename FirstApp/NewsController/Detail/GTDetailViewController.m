@@ -17,6 +17,14 @@
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
 
+- (instancetype) initWithUrlString: (NSString *)urlString {
+    self = [super init];
+    if (self) {
+        self.articleUrl = urlString;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,7 +37,7 @@
         self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 20)];
         self.progressView;
     })];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://time.geekbang.org"]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.articleUrl]]];
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 }
 

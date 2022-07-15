@@ -33,12 +33,13 @@
     UINavigationController *viewController1 = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 //    UIViewController *viewController1 = [[UIViewController alloc] init];
 //    [viewController1.view setBackgroundColor:[UIColor redColor]];
-    viewController1.tabBarItem.title = @"News";
+    viewController1.tabBarItem.title = @"Video";
     [viewController1 setEdgesForExtendedLayout:UIRectEdgeNone];
     
-    TableViewDataSource *viewController2 = [[TableViewDataSource alloc] init];
-    viewController2.tableView.dataSource = viewController2;
-    viewController2.tableView.delegate = viewController2;
+    
+    TableViewDataSource *tableViewController = [[TableViewDataSource alloc] init];
+    tableViewController.tableView.dataSource = tableViewController;
+    tableViewController.tableView.delegate = tableViewController;
 //    UIViewController *viewController2 = [[UIViewController alloc] init];
 //    UITableView *tableView = [[UITableView alloc] initWithFrame:viewController2.view.bounds style:UITableViewStyleGrouped];
 //    TableViewDataSource *datasource = [[TableViewDataSource alloc] init];
@@ -47,8 +48,9 @@
 //    [tableView setBackgroundColor:[UIColor lightGrayColor]];
 //    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 //    [viewController2.view addSubview:tableView];
+    UINavigationController *viewController2 = [[UINavigationController alloc] initWithRootViewController:tableViewController];
     [viewController2.view setBackgroundColor:[UIColor lightGrayColor]];
-    viewController2.tabBarItem.title = @"Video";
+    viewController2.tabBarItem.title = @"News";
     [viewController2 setEdgesForExtendedLayout:UIRectEdgeNone];
     
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];

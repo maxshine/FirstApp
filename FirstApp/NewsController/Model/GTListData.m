@@ -7,11 +7,11 @@
 
 #import "GTListData.h"
 #import <AFNetworking.h>
-#import "GTListItem.h""
+#import "GTListItem.h"
 
 @implementation GTListData
 
-- (void) loadListData {
+- (void) loadListDataWithFinishBlock: (GTListDataFinishBlock)finishBlock {
     
     NSString *urlString = @"https://v.juhe.cn/toutiao/index?type=top&key=97ad001bfcc2082e2eeaf798bad3d54e";
     NSURL *listURL = [NSURL URLWithString:urlString];
@@ -37,10 +37,14 @@
             [listItem configWithDictionary:entry];
             [listItemArray addObject:listItem];
         }
-        NSLog(@"");
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (finishBlock) {
+                finishBlock(error == nil, listItemArray.copy);
+            }
+        });
     }];
     [dataTask resume];
-    NSLog(@"");
 }
 
 @end

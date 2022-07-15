@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     self.loader = [[GTListData alloc] init];
-    [self.loader loadListData];
+    [self.loader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
+        __weak typeof(self) wself = self;
+        if (success) {
+            __strong typeof(wself) strongself = wself;
+            strongself.dataArray = dataArray;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -34,12 +41,12 @@
     }
 //    tableCell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@", @(indexPath.row)];
 //    tableCell.detailTextLabel.text = @"副标题";
-    [tableCell layoutCell];
+    [tableCell layoutCellWithItemData:[self.dataArray objectAtIndex:indexPath.row]];
     return tableCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *subViewController = [[UIViewController alloc] init];
+    GTDetailViewController *subViewController = [[GTDetailViewController alloc] initWithUrlString:[[self.dataArray objectAtIndex:indexPath.row] articleUrl]];
     subViewController.title = [NSString stringWithFormat:@"Title %@", @(indexPath.row)];
     [self.navigationController pushViewController:subViewController animated:YES];
 }
