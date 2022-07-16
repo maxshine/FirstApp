@@ -17,13 +17,13 @@
     NSURL *listURL = [NSURL URLWithString:urlString];
     __unused NSURLRequest *listRequest = [NSURLRequest requestWithURL:listURL];
     
-    [[AFHTTPSessionManager manager] GET:urlString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-        }];
+//    [[AFHTTPSessionManager manager] GET:urlString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//
+//        }];
     
     NSURLSession *urlSession = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:listRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -49,7 +49,25 @@
 }
 
 - (void) _getSandBoxPath {
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [pathArray firstObject];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *dataPath = [cachePath stringByAppendingPathComponent:@"GTData"];
+    NSError *createError;
+    [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&createError];
+    NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"list"];
+    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
+    if (fileExist) {
+        [fileManager removeItemAtPath:listDataPath error:nil];
+    }
+    NSData *listData = [@"abc" dataUsingEncoding:NSUTF8StringEncoding];
+    [fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:listDataPath];
+    [fileHandle seekToEndOfFile];
+    [fileHandle writeData:[@"def" dataUsingEncoding:NSUTF8StringEncoding]];
+    [fileHandle synchronizeFile];
+    [fileHandle closeFile];
     NSLog(@"%@", pathArray);
 }
 
