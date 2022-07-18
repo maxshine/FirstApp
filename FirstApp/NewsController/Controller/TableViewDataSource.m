@@ -10,6 +10,7 @@
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import "GTDeleteView.h"
+#import "GTListItem.h"
 
 
 @implementation TableViewDataSource
@@ -46,9 +47,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
     GTDetailViewController *subViewController = [[GTDetailViewController alloc] initWithUrlString:[[self.dataArray objectAtIndex:indexPath.row] articleUrl]];
     subViewController.title = [NSString stringWithFormat:@"Title %@", @(indexPath.row)];
     [self.navigationController pushViewController:subViewController animated:YES];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniqueKey];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
