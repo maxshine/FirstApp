@@ -26,7 +26,9 @@
 //        }];
     
     NSURLSession *urlSession = [NSURLSession sharedSession];
+    __weak typeof(self) wself = self;
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:listRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        __strong typeof(self) strongself = wself;
         NSError *jsonError;
         id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 #warning type checking
@@ -37,6 +39,7 @@
             [listItem configWithDictionary:entry];
             [listItemArray addObject:listItem];
         }
+        [strongself _archiveListDataWithArray:listItemArray.copy];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (finishBlock) {
@@ -45,7 +48,26 @@
         });
     }];
     [dataTask resume];
-    [self _getSandBoxPath];
+}
+
+- (void) _archiveListDataWithArray: (NSArray<GTListItem*> *) array {
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [pathArray firstObject];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *dataPath = [cachePath stringByAppendingPathComponent:@"GTData"];
+    NSError *createError;
+    [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&createError];
+    NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"list"];
+    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
+    if (!fileExist) {
+        NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
+        [fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
+    }
+    NSLog(@"");
+    
+    NSData *readListData = [fileManager contentsAtPath:listDataPath];
+    id unarchivedObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GTListItem class], [NSString class], nil] fromData:readListData error:nil];
+    NSLog(@"");
 }
 
 - (void) _getSandBoxPath {
