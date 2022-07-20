@@ -26,6 +26,7 @@
     if (self) {
         self.category = [coder decodeObjectForKey:@"category"];
         self.picUrl = [coder decodeObjectForKey:@"picUrl"];
+        self.picUrl = @"https://pbs.twimg.com/profile_images/1510056949714657281/dWacU-kf_x96.jpg";
         self.uniqueKey = [coder decodeObjectForKey:@"uniqueKey"];
         self.title = [coder decodeObjectForKey:@"title"];
         self.date = [coder decodeObjectForKey:@"date"];
@@ -45,6 +46,7 @@
 #warning "type checking and object existence"
     self.category = [dictionary objectForKey:@"category"];
     self.picUrl = [dictionary objectForKey:@"thumbnail_pic_s"];
+    self.picUrl = @"https://pbs.twimg.com/profile_images/1510056949714657281/dWacU-kf_x96.jpg";
     self.uniqueKey = [dictionary objectForKey:@"uniquekey"];
     self.title = [dictionary objectForKey:@"title"];
     self.date = [dictionary objectForKey:@"date"];

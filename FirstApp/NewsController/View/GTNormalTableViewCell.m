@@ -47,7 +47,7 @@
             self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(300, 15, 100, 70)];
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
 //            self.timeLabel.backgroundColor = [UIColor redColor];
-            self.timeLabel;
+            self.rightImageView;
         })];
         [self.contentView addSubview:({
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(290, 80, 30, 20)];
@@ -89,8 +89,24 @@
     self.timeLabel.text = item.date;
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x+self.commentLabel.frame.size.width+15, self.commentLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
-//    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
-//    self.rightImageView.image = image;
+
+    // NSThread impl
+//    NSThread *downloadImageThread = [[NSThread alloc] initWithBlock:^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+//        self.rightImageView.image = image;
+//    }];
+//    downloadImageThread.name = @"downloadImageThread";
+//    [downloadImageThread start];
+    
+    // GCD impl
+    dispatch_queue_global_t downloadQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
+    dispatch_async(downloadQueue, ^{
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+        dispatch_async(mainQueue, ^{
+            self.rightImageView.image = image;
+        });
+    });
 }
 
 - (void)awakeFromNib {

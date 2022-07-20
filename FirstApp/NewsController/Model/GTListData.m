@@ -30,6 +30,7 @@
         finishBlock(YES, listData);
     }
     
+    // request latest data
 //    NSURLSession *urlSession = [NSURLSession sharedSession];
 //    __weak typeof(self) wself = self;
 //    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:listRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
