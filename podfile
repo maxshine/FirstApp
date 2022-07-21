@@ -1,3 +1,4 @@
 target 'FirstApp' do
 	pod 'AFNetworking'
+	pod 'SDWebImage'
 end
