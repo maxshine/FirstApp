@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GTChatViewController : UICollectionViewController
+@interface GTVideoViewController : UICollectionViewController
 
 @end
 

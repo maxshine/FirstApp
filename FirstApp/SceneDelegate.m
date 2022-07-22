@@ -8,8 +8,9 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "TableViewDataSource.h"
-#import "GTChatViewController.h"
+#import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
+#import "GTVideoCoverView.h"
 
 @interface SceneDelegate () <UITabBarControllerDelegate>
 
@@ -33,7 +34,7 @@
     UINavigationController *viewController1 = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 //    UIViewController *viewController1 = [[UIViewController alloc] init];
 //    [viewController1.view setBackgroundColor:[UIColor redColor]];
-    viewController1.tabBarItem.title = @"Video";
+    viewController1.tabBarItem.title = @"Chat";
     [viewController1 setEdgesForExtendedLayout:UIRectEdgeNone];
     
     
@@ -56,13 +57,13 @@
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
     collectionViewLayout.minimumLineSpacing = 10;
     collectionViewLayout.minimumInteritemSpacing = 10;
-    collectionViewLayout.itemSize = CGSizeMake((rootViewController.view.frame.size.width - 10)/2, 100);
-    GTChatViewController *viewController3 = [[GTChatViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
-    [viewController3.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCellID"];
+    collectionViewLayout.itemSize = CGSizeMake(rootViewController.view.frame.size.width, rootViewController.view.frame.size.width/16*9);
+    GTVideoViewController *viewController3 = [[GTVideoViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
+    [viewController3.collectionView registerClass:[GTVideoCoverView class] forCellWithReuseIdentifier:@"GTVideoCoverView"];
     [viewController3.collectionView setBackgroundColor:[UIColor lightGrayColor]];
     viewController3.collectionView.delegate = viewController3;
     viewController3.collectionView.dataSource = viewController3;
-    viewController3.tabBarItem.title = @"Chat";
+    viewController3.tabBarItem.title = @"Video";
     [viewController3 setEdgesForExtendedLayout:UIRectEdgeNone];
 
     

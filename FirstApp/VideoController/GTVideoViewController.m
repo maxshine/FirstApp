@@ -5,9 +5,10 @@
 //  Created by Yang Gao on 2022/6/30.
 //
 
-#import "GTChatViewController.h"
+#import "GTVideoViewController.h"
+#import "GTVideoCoverView.h"
 
-@implementation GTChatViewController
+@implementation GTVideoViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -19,8 +20,12 @@
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *collectionViewCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCellID" forIndexPath:indexPath];
-    [collectionViewCell.contentView setBackgroundColor:[UIColor blackColor]];
+    UICollectionViewCell *collectionViewCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GTVideoCoverView" forIndexPath:indexPath];
+    if ([collectionViewCell isKindOfClass:[GTVideoCoverView class]]) {
+        // http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
+        [((GTVideoCoverView *)collectionViewCell) layoutWithVideoCoverUrl:@"icon.bundle/cover.png" videoUrl:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
+    }
+//    [collectionViewCell.contentView setBackgroundColor:[UIColor redColor]];
     return collectionViewCell;
 }
 
