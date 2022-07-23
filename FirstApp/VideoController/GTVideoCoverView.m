@@ -6,7 +6,7 @@
 //
 
 #import "GTVideoCoverView.h"
-#import "AVFoundation/AVFoundation.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation GTVideoCoverView
 
@@ -25,23 +25,47 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToPlay)];
         [self addGestureRecognizer:tapGesture];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlayEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     return self;
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.avPlayerItem removeObserver:self forKeyPath:@"status"];
 }
 
 - (void) tapToPlay {
     NSLog(@"");
     NSURL *url = [NSURL URLWithString:self.videoUrl];
     AVAsset *asset = [AVAsset assetWithURL:url];
-    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
-    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
-    AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:player];
-    layer.frame = self.coverView.bounds;
-    [self.coverView.layer addSublayer:layer];
-    [player play];
+    self.avPlayerItem = [AVPlayerItem playerItemWithAsset:asset];
+    [self.avPlayerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    self.avPlayer = [AVPlayer playerWithPlayerItem:self.avPlayerItem];
+    self.avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:self.avPlayer ];
+    self.avPlayerLayer.frame = self.coverView.bounds;
+    [self.coverView.layer addSublayer:self.avPlayerLayer];
+//    [self.avPlayer play];
 }
 
 - (void) layoutWithVideoCoverUrl: (NSString *) videoCoverUrl videoUrl:(NSString *) videoUrl {
     self.coverView.image = [UIImage imageNamed:videoCoverUrl];
     self.videoUrl = videoUrl;
+}
+
+- (void) handlePlayEnd {
+    NSLog(@"Play End");
+    [self.avPlayerLayer removeFromSuperlayer];
+    self.avPlayer = nil;
+    self.avPlayerItem = nil;
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"status"]) {
+        if (((NSNumber *)[change objectForKey:NSKeyValueChangeNewKey]).integerValue == AVPlayerItemStatusReadyToPlay) {
+            [self.avPlayer play];
+        } else {
+            NSLog(@"Play Asset load failure");
+        }
+    }
 }
 @end
