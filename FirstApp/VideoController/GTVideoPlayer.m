@@ -1,48 +1,26 @@
 //
-//  GTVideoCoverView.m
+//  GTVideoPlayer.m
 //  FirstApp
 //
-//  Created by Yang Gao on 2022/7/22.
+//  Created by Yang Gao on 2022/7/24.
 //
 
-#import "GTVideoCoverView.h"
-#import <AVFoundation/AVFoundation.h>
 #import "GTVideoPlayer.h"
 
-@implementation GTVideoCoverView
+@implementation GTVideoPlayer
 
-- (instancetype) initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self addSubview:({
-                    _coverView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-                    _coverView;
-                })];
-        [_coverView addSubview:({
-            _playButton = [[UIImageView alloc] initWithFrame:CGRectMake((frame.size.width-50)/2, (frame.size.height-50)/2, 50, 50)];
-            _playButton.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
-            _playButton;
-        })];
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToPlaySingleInstance)];
-        [self addGestureRecognizer:tapGesture];
-    }
-    return self;
++ (GTVideoPlayer *) Player {
+    static GTVideoPlayer* player;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        player = [[GTVideoPlayer alloc] init];
+    });
+    return player;
 }
 
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.avPlayerItem removeObserver:self forKeyPath:@"status"];
-    [self.avPlayerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
-}
-
-- (void) tapToPlaySingleInstance {
-    GTVideoPlayer *player = [GTVideoPlayer Player];
-    [player playVideoWithUrl:self.videoUrl attachView:self.coverView];
-}
-
-- (void) tapToPlay {
-    NSLog(@"");
-    NSURL *url = [NSURL URLWithString:self.videoUrl];
+- (void) playVideoWithUrl: (NSString *) videoUrl attachView: (UIView *) attachView {
+    [self stopPlay];
+    NSURL *url = [NSURL URLWithString:videoUrl];
     AVAsset *asset = [AVAsset assetWithURL:url];
     self.avPlayerItem = [AVPlayerItem playerItemWithAsset:asset];
     [self.avPlayerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
@@ -52,15 +30,20 @@
         NSLog(@"Played %f", CMTimeGetSeconds(time));
     }];
     self.avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:self.avPlayer ];
-    self.avPlayerLayer.frame = self.coverView.bounds;
-    [self.coverView.layer addSublayer:self.avPlayerLayer];
+    self.avPlayerLayer.frame = attachView.bounds;
+    [attachView.layer addSublayer:self.avPlayerLayer];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlayEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-//    [self.avPlayer play];
 }
 
-- (void) layoutWithVideoCoverUrl: (NSString *) videoCoverUrl videoUrl:(NSString *) videoUrl {
-    self.coverView.image = [UIImage imageNamed:videoCoverUrl];
-    self.videoUrl = videoUrl;
+- (void) stopPlay {
+    NSLog(@"Play End");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.avPlayerLayer removeFromSuperlayer];
+    [self.avPlayerItem removeObserver:self forKeyPath:@"status"];
+    [self.avPlayerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+    self.avPlayer = nil;
+    self.avPlayerItem = nil;
+//    [self.avplayer seekToTime:CMTimeMake(0, 1)]; // replay from the beginning
 }
 
 - (void) handlePlayEnd {
@@ -84,4 +67,5 @@
         NSLog(@"Buffered %@", [change objectForKey:NSKeyValueChangeNewKey]);
     }
 }
+
 @end

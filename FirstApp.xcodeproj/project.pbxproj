@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45E2666E73CCA2ED839BB581 /* libPods-FirstApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DE10C6138E4565D379A105 /* libPods-FirstApp.a */; };
+		A9056D9C288CB58E00EB1907 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9056D9B288CB58E00EB1907 /* GTVideoPlayer.m */; };
 		A908F155285F2C3800374FE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A908F154285F2C3800374FE4 /* AppDelegate.m */; };
 		A908F158285F2C3800374FE4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A908F157285F2C3800374FE4 /* SceneDelegate.m */; };
 		A908F15B285F2C3800374FE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A908F15A285F2C3800374FE4 /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		16C574FF322DF2FA03B59D10 /* Pods-FirstApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.debug.xcconfig"; path = "Target Support Files/Pods-FirstApp/Pods-FirstApp.debug.xcconfig"; sourceTree = "<group>"; };
 		55DE10C6138E4565D379A105 /* libPods-FirstApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9056D9A288CB58E00EB1907 /* GTVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoPlayer.h; sourceTree = "<group>"; };
+		A9056D9B288CB58E00EB1907 /* GTVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoPlayer.m; sourceTree = "<group>"; };
 		A908F150285F2C3800374FE4 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A908F153285F2C3800374FE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A908F154285F2C3800374FE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				A9F5CFB1286DAB0A008E7533 /* GTVideoViewController.m */,
 				A959CCF7288A132500204647 /* GTVideoCoverView.h */,
 				A959CCF8288A132500204647 /* GTVideoCoverView.m */,
+				A9056D9A288CB58E00EB1907 /* GTVideoPlayer.h */,
+				A9056D9B288CB58E00EB1907 /* GTVideoPlayer.m */,
 			);
 			path = VideoController;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				A9A70B57287C018400E67C70 /* GTListData.m in Sources */,
 				A965D510287F91620083053E /* GTListItem.m in Sources */,
 				A959CCF9288A132500204647 /* GTVideoCoverView.m in Sources */,
+				A9056D9C288CB58E00EB1907 /* GTVideoPlayer.m in Sources */,
 				A99B234F287021E3000E8458 /* GTRecommendViewController.m in Sources */,
 				A908F158285F2C3800374FE4 /* SceneDelegate.m in Sources */,
 				A914AC4528795BBC002C2F32 /* GTDeleteView.m in Sources */,
