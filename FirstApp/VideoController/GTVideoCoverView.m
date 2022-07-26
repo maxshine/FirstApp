@@ -15,13 +15,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:({
-                    _coverView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+                    _coverView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - GTVideoToobarHeight)];
                     _coverView;
                 })];
         [_coverView addSubview:({
-            _playButton = [[UIImageView alloc] initWithFrame:CGRectMake((frame.size.width-50)/2, (frame.size.height-50)/2, 50, 50)];
+            _playButton = [[UIImageView alloc] initWithFrame:CGRectMake((frame.size.width-50)/2, (frame.size.height- GTVideoToobarHeight - 50)/2, 50, 50)];
             _playButton.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
             _playButton;
+        })];
+        
+        [self addSubview:({
+            self.toolbar = [[GTVideoToobar alloc] initWithFrame:CGRectMake(0, self.coverView.bounds.size.height, frame.size.width, GTVideoToobarHeight)];
+            self.toolbar;
         })];
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToPlaySingleInstance)];
         [self addGestureRecognizer:tapGesture];
@@ -61,6 +66,7 @@
 - (void) layoutWithVideoCoverUrl: (NSString *) videoCoverUrl videoUrl:(NSString *) videoUrl {
     self.coverView.image = [UIImage imageNamed:videoCoverUrl];
     self.videoUrl = videoUrl;
+    [self.toolbar layoutWithModel:nil];
 }
 
 - (void) handlePlayEnd {

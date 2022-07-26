@@ -57,7 +57,7 @@
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
     collectionViewLayout.minimumLineSpacing = 10;
     collectionViewLayout.minimumInteritemSpacing = 10;
-    collectionViewLayout.itemSize = CGSizeMake(rootViewController.view.frame.size.width, rootViewController.view.frame.size.width/16*9);
+    collectionViewLayout.itemSize = CGSizeMake(rootViewController.view.frame.size.width, rootViewController.view.frame.size.width/16*9+GTVideoToobarHeight);
     GTVideoViewController *viewController3 = [[GTVideoViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
     [viewController3.collectionView registerClass:[GTVideoCoverView class] forCellWithReuseIdentifier:@"GTVideoCoverView"];
     [viewController3.collectionView setBackgroundColor:[UIColor lightGrayColor]];

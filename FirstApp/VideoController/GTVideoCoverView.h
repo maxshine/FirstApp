@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "GTVideoToobar.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,10 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong, readwrite) UIImageView *coverView;
 @property(nonatomic, strong, readwrite) UIImageView *playButton;
-@property(nonatomic, strong, readwrite) NSString *videoUrl;
+@property(nonatomic, copy, readwrite) NSString *videoUrl;
 @property(nonatomic, strong, readwrite, nullable) AVPlayerItem *avPlayerItem;
 @property(nonatomic, strong, readwrite, nullable) AVPlayer *avPlayer;
 @property(nonatomic, strong, readwrite) AVPlayerLayer *avPlayerLayer;
+
+@property(nonatomic, strong, readwrite) GTVideoToobar *toolbar;
 
 - (void) layoutWithVideoCoverUrl: (NSString *) videoCoverUrl videoUrl:(NSString *) videoUrl;
 
