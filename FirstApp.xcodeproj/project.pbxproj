@@ -26,6 +26,7 @@
 		A99B234F287021E3000E8458 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99B234E287021E3000E8458 /* GTRecommendViewController.m */; };
 		A9A70B57287C018400E67C70 /* GTListData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A70B56287C018400E67C70 /* GTListData.m */; };
 		A9AFFBE62877FC9A00A2D33B /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */; };
+		A9E9ADBA2890AB6C00EF9A79 /* GTScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E9ADB92890AB6C00EF9A79 /* GTScreen.m */; };
 		A9F5CFB2286DAB0A008E7533 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F5CFB1286DAB0A008E7533 /* GTVideoViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		A9A70B56287C018400E67C70 /* GTListData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListData.m; sourceTree = "<group>"; };
 		A9AFFBE42877FC9A00A2D33B /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
+		A9E9ADB82890AB6C00EF9A79 /* GTScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTScreen.h; sourceTree = "<group>"; };
+		A9E9ADB92890AB6C00EF9A79 /* GTScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTScreen.m; sourceTree = "<group>"; };
 		A9F5CFB0286DAB0A008E7533 /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
 		A9F5CFB1286DAB0A008E7533 /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 		C32BF490D3EABE86B050A852 /* Pods-FirstApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.release.xcconfig"; path = "Target Support Files/Pods-FirstApp/Pods-FirstApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				A908F161285F2C3C00374FE4 /* LaunchScreen.storyboard */,
 				A908F164285F2C3C00374FE4 /* Info.plist */,
 				A908F165285F2C3C00374FE4 /* main.m */,
+				A9E9ADB82890AB6C00EF9A79 /* GTScreen.h */,
+				A9E9ADB92890AB6C00EF9A79 /* GTScreen.m */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E9ADBA2890AB6C00EF9A79 /* GTScreen.m in Sources */,
 				A908F15B285F2C3800374FE4 /* ViewController.m in Sources */,
 				A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */,
 				A908F155285F2C3800374FE4 /* AppDelegate.m in Sources */,
