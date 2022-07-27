@@ -17,4 +17,16 @@
 }
 */
 
++ (CGSize) sizeFor65Inch {
+    return CGSizeMake(414, 896);
+}
+
++ (CGSize) sizeFor61Inch {
+    return CGSizeMake(414, 896);
+}
+
++ (CGSize) sizeFor58Inch {
+    return CGSizeMake(375, 812);
+}
+
 @end
