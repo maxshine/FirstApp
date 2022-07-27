@@ -33,8 +33,8 @@
     for (int i=0; i<5; i++) {
         [scrollView addSubview:({
             
-            UIImage *image2x = [UIImage imageNamed:@"icon.bundle/testScale@2x.png"];
-            UIImage *image3x = [UIImage imageNamed:@"icon.bundle/testScale@3x.png"];
+            UIImage *image2x = [UIImage imageNamed:@"testScale"];
+//            UIImage *image3x = [UIImage imageNamed:@"icon.bundle/testScale@3x.png"];
             
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scrollView.bounds.size.width*i, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
             [view setBackgroundColor:[colorArray objectAtIndex:i]];
