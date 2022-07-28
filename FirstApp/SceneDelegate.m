@@ -11,6 +11,7 @@
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 #import "GTVideoCoverView.h"
+#import "GTSplashView.h"
 
 @interface SceneDelegate () <UITabBarControllerDelegate>
 
@@ -75,6 +76,10 @@
     [tabBarController setViewControllers:@[viewController1, viewController2, viewController3, viewController4]];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
+    
+    [self.window addSubview:({
+        [[GTSplashView alloc] initWithFrame:self.window.bounds];
+    })];
 }
 
 

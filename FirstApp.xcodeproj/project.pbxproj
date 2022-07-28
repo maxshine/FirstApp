@@ -20,6 +20,7 @@
 		A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */; };
 		A959CCF9288A132500204647 /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A959CCF8288A132500204647 /* GTVideoCoverView.m */; };
 		A959CCFB288A165300204647 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A959CCFA288A165300204647 /* icon.bundle */; };
+		A95B3AD22893526800FF9EFE /* GTSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B3AD12893526800FF9EFE /* GTSplashView.m */; };
 		A965D510287F91620083053E /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A965D50F287F91620083053E /* GTListItem.m */; };
 		A971FBD1286AFF4300FED5A4 /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A971FBD0286AFF4300FED5A4 /* TableViewDataSource.m */; };
 		A974C736288F575100E78E18 /* GTVideoToobar.m in Sources */ = {isa = PBXBuildFile; fileRef = A974C735288F575100E78E18 /* GTVideoToobar.m */; };
@@ -54,6 +55,8 @@
 		A959CCF7288A132500204647 /* GTVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoCoverView.h; sourceTree = "<group>"; };
 		A959CCF8288A132500204647 /* GTVideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoCoverView.m; sourceTree = "<group>"; };
 		A959CCFA288A165300204647 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
+		A95B3AD02893526800FF9EFE /* GTSplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSplashView.h; sourceTree = "<group>"; };
+		A95B3AD12893526800FF9EFE /* GTSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSplashView.m; sourceTree = "<group>"; };
 		A965D50E287F91620083053E /* GTListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItem.h; sourceTree = "<group>"; };
 		A965D50F287F91620083053E /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
 		A971FBD0286AFF4300FED5A4 /* TableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDataSource.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				A908F165285F2C3C00374FE4 /* main.m */,
 				A9E9ADB82890AB6C00EF9A79 /* GTScreen.h */,
 				A9E9ADB92890AB6C00EF9A79 /* GTScreen.m */,
+				A95B3AD02893526800FF9EFE /* GTSplashView.h */,
+				A95B3AD12893526800FF9EFE /* GTSplashView.m */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				A908F158285F2C3800374FE4 /* SceneDelegate.m in Sources */,
 				A914AC4528795BBC002C2F32 /* GTDeleteView.m in Sources */,
 				A9AFFBE62877FC9A00A2D33B /* GTDetailViewController.m in Sources */,
+				A95B3AD22893526800FF9EFE /* GTSplashView.m in Sources */,
 				A974C736288F575100E78E18 /* GTVideoToobar.m in Sources */,
 				A971FBD1286AFF4300FED5A4 /* TableViewDataSource.m in Sources */,
 				A9F5CFB2286DAB0A008E7533 /* GTVideoViewController.m in Sources */,
@@ -470,7 +476,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirstApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchiScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -497,7 +503,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirstApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchiScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
