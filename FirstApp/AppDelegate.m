@@ -36,5 +36,22 @@
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+}
+- (void)applicationWillResignActive:(UIApplication *)application {
+    
+}
+- (void)applicationWillTerminate:(UIApplication *)application {
+    
+}
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+}
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+}
+
+
 
 @end
