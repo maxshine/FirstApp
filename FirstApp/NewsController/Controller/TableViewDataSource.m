@@ -11,6 +11,7 @@
 #import "GTDetailViewController.h"
 #import "GTDeleteView.h"
 #import "GTListItem.h"
+#import "GTMediator.h"
 
 
 @implementation TableViewDataSource
@@ -48,7 +49,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
-    GTDetailViewController *subViewController = [[GTDetailViewController alloc] initWithUrlString:[[self.dataArray objectAtIndex:indexPath.row] articleUrl]];
+//    GTDetailViewController *subViewController = [[GTDetailViewController alloc] initWithUrlString:[[self.dataArray objectAtIndex:indexPath.row] articleUrl]];
+    __kindof UIViewController *subViewController = [GTMediator detailViewControllerWithUrl:[[self.dataArray objectAtIndex:indexPath.row] articleUrl]];
     subViewController.title = [NSString stringWithFormat:@"Title %@", @(indexPath.row)];
     [self.navigationController pushViewController:subViewController animated:YES];
     
