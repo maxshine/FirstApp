@@ -6,12 +6,22 @@
 //
 
 #import "GTDetailViewController.h"
+#import "GTMediator.h"
 
 @interface GTDetailViewController ()
 
 @end
 
 @implementation GTDetailViewController
+
++ (void)load {
+    [GTMediator registerScheme:@"detail://" processBlock:^(NSDictionary * _Nonnull params) {
+        NSString *url = [params objectForKey:@"url"];
+        UINavigationController *controller = (UINavigationController *)[params objectForKey:@"controller"];
+        GTDetailViewController *subViewController = [[GTDetailViewController alloc] initWithUrlString:url];
+        [controller pushViewController:subViewController animated:YES];
+    }];
+}
 
 - (void) dealloc {
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
