@@ -56,7 +56,11 @@
 //    [self.navigationController pushViewController:subViewController animated:YES];
     
     // scheme
-    [GTMediator openUrl:@"detail://" params:@{@"url": item.articleUrl, @"controller": self.navigationController}];
+//    [GTMediator openUrl:@"detail://" params:@{@"url": item.articleUrl, @"controller": self.navigationController}];
+    
+    // protocol-class
+    Class cls = [GTMediator classForProtocol:@protocol(GTDetailViewControllerProtocol)];
+    [self.navigationController pushViewController:[[cls alloc] initWithUrlString: item.articleUrl] animated:YES];
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniqueKey];
 }

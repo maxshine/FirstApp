@@ -7,10 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "GTMediator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GTDetailViewController : UIViewController <WKNavigationDelegate>
+@interface GTDetailViewController : UIViewController <WKNavigationDelegate, GTDetailViewControllerProtocol>
 
 @property(nonatomic, strong, readwrite) WKWebView* webView;
 @property(nonatomic, strong, readwrite) UIProgressView* progressView;

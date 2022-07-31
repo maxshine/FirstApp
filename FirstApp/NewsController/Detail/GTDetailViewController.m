@@ -21,6 +21,8 @@
         GTDetailViewController *subViewController = [[GTDetailViewController alloc] initWithUrlString:url];
         [controller pushViewController:subViewController animated:YES];
     }];
+    
+    [GTMediator registerProtocol:@protocol(GTDetailViewControllerProtocol) forClass:[self class]];
 }
 
 - (void) dealloc {
@@ -33,6 +35,10 @@
         self.articleUrl = urlString;
     }
     return self;
+}
+
+- (__kindof UIViewController *)detailViewControllerWithUrl:(NSString *)detailUrl{
+    return [[[self class] alloc] initWithUrlString:detailUrl];
 }
 
 - (void)viewDidLoad {

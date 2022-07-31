@@ -9,6 +9,15 @@
 
 @implementation GTMediator
 
++ (void) registerProtocol: (Protocol *)protocol forClass: (Class) cls {
+    if (protocol && cls) {
+        [[[self class] mediatorCache] setObject: cls forKey:NSStringFromProtocol(protocol)];
+    }
+}
++ (Class) classForProtocol: (Protocol *) protocol {
+    return [[[self class] mediatorCache] objectForKey:NSStringFromProtocol(protocol)];
+}
+
 + (NSMutableDictionary *) mediatorCache {
     static NSMutableDictionary *cache;
     static dispatch_once_t onceToken;
