@@ -34,7 +34,7 @@
         [scrollView addSubview:({
             
             UIImage *image2x = [UIImage imageNamed:@"testScale"];
-//            UIImage *image3x = [UIImage imageNamed:@"icon.bundle/testScale@3x.png"];
+            UIImage *image3x = [UIImage imageNamed:@"icon.bundle/testScale@3x.png"];
             
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scrollView.bounds.size.width*i, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
             UITapGestureRecognizer *tagGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick)];
@@ -62,7 +62,7 @@
     NSLog(@"scroll view clicked");
     NSURL *appURL = [NSURL URLWithString:@"testSchema://"];
     if ([[UIApplication sharedApplication] canOpenURL:appURL]) {
-        [[UIApplication sharedApplication] openURL:appURL options:nil completionHandler:^(BOOL success) {
+        [[UIApplication sharedApplication] openURL:appURL options:@{} completionHandler:^(BOOL success) {
             NSLog(@"open url in scroll view");
         }];
     }

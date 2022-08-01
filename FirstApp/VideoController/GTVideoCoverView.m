@@ -66,7 +66,7 @@
 - (void) layoutWithVideoCoverUrl: (NSString *) videoCoverUrl videoUrl:(NSString *) videoUrl {
     self.coverView.image = [UIImage imageNamed:videoCoverUrl];
     self.videoUrl = videoUrl;
-    [self.toolbar layoutWithModel:nil];
+    [self.toolbar layoutWithModel:@{}];
 }
 
 - (void) handlePlayEnd {
