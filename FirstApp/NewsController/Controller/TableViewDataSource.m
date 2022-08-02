@@ -60,7 +60,7 @@
     
     // protocol-class
     Class cls = [GTMediator classForProtocol:@protocol(GTDetailViewControllerProtocol)];
-    [self.navigationController pushViewController:[[cls alloc] initWithUrlString: item.articleUrl] animated:YES];
+    [self.navigationController pushViewController:[[cls alloc] detailViewControllerWithUrl: item.articleUrl] animated:YES];
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniqueKey];
 }

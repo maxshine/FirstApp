@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#include <execinfo.h>
 
 @interface AppDelegate ()
 
@@ -54,6 +55,39 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
     return YES;
+}
+
+#pragma mark - CRASH
+
+- (void)_caughtException{
+    //NSexception
+    NSSetUncaughtExceptionHandler(HandleNSException);
+    
+    //signal
+    signal(SIGABRT, SignalExceptionHandler);
+    signal(SIGILL, SignalExceptionHandler);
+    signal(SIGSEGV, SignalExceptionHandler);
+    signal(SIGFPE, SignalExceptionHandler);
+    signal(SIGBUS, SignalExceptionHandler);
+    signal(SIGPIPE, SignalExceptionHandler);
+}
+
+void SignalExceptionHandler(int signal){
+    void* callstack[128];
+    int frames = backtrace(callstack, 128);
+    char **strs = backtrace_symbols(callstack, frames);
+    NSMutableArray *backtrace = [NSMutableArray arrayWithCapacity:frames];
+    for (int i = 0; i < frames; i++) {
+        [backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
+    }
+    free(strs);
+    //存储crash信息。
+}
+
+void HandleNSException(NSException *exception){
+    __unused NSString *reason = [exception reason];
+    __unused NSString *name = [exception name];
+    //存储crash信息。
 }
 
 @end
