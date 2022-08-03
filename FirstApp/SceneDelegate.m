@@ -12,6 +12,7 @@
 #import "GTRecommendViewController.h"
 #import "GTVideoCoverView.h"
 #import "GTSplashView.h"
+#import "GTLocation.h"
 
 @interface SceneDelegate () <UITabBarControllerDelegate>
 
@@ -80,6 +81,7 @@
     [self.window addSubview:({
         [[GTSplashView alloc] initWithFrame:self.window.bounds];
     })];
+    [[GTLocation locationManager] checkLocationAuthorization];
 }
 
 
