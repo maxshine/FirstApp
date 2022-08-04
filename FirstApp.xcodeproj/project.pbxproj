@@ -17,6 +17,7 @@
 		A908F163285F2C3C00374FE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908F161285F2C3C00374FE4 /* LaunchScreen.storyboard */; };
 		A908F166285F2C3C00374FE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A908F165285F2C3C00374FE4 /* main.m */; };
 		A914AC4528795BBC002C2F32 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A914AC4428795BBC002C2F32 /* GTDeleteView.m */; };
+		A93AD0EF289B3223008C8903 /* GTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = A93AD0EE289B3223008C8903 /* GTNotification.m */; };
 		A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */; };
 		A959CCF9288A132500204647 /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A959CCF8288A132500204647 /* GTVideoCoverView.m */; };
 		A959CCFB288A165300204647 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A959CCFA288A165300204647 /* icon.bundle */; };
@@ -32,6 +33,7 @@
 		A9A70B57287C018400E67C70 /* GTListData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A70B56287C018400E67C70 /* GTListData.m */; };
 		A9AFC0AA2899ED9C00D78350 /* GTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFC0A92899ED9C00D78350 /* GTLocation.m */; };
 		A9AFFBE62877FC9A00A2D33B /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */; };
+		A9C29AFE289B550000B388E5 /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C29AFD289B550000B388E5 /* ICONBLACK.png */; };
 		A9DEECE32895EFC300376801 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DEECE22895EFC300376801 /* GTMediator.m */; };
 		A9E9ADBA2890AB6C00EF9A79 /* GTScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E9ADB92890AB6C00EF9A79 /* GTScreen.m */; };
 		A9F5CFB2286DAB0A008E7533 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F5CFB1286DAB0A008E7533 /* GTVideoViewController.m */; };
@@ -56,6 +58,8 @@
 		A908F165285F2C3C00374FE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A914AC4328795BBC002C2F32 /* GTDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteView.h; sourceTree = "<group>"; };
 		A914AC4428795BBC002C2F32 /* GTDeleteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteView.m; sourceTree = "<group>"; };
+		A93AD0ED289B3223008C8903 /* GTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTNotification.h; sourceTree = "<group>"; };
+		A93AD0EE289B3223008C8903 /* GTNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTNotification.m; sourceTree = "<group>"; };
 		A93FFABB2872A06500142F8D /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		A959CCF7288A132500204647 /* GTVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoCoverView.h; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		A9AFC0A92899ED9C00D78350 /* GTLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLocation.m; sourceTree = "<group>"; };
 		A9AFFBE42877FC9A00A2D33B /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		A9AFFBE52877FC9A00A2D33B /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
+		A9C29AFD289B550000B388E5 /* ICONBLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONBLACK.png; sourceTree = "<group>"; };
 		A9DEECE12895EFC300376801 /* GTMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMediator.h; sourceTree = "<group>"; };
 		A9DEECE22895EFC300376801 /* GTMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMediator.m; sourceTree = "<group>"; };
 		A9E9ADB82890AB6C00EF9A79 /* GTScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTScreen.h; sourceTree = "<group>"; };
@@ -127,6 +132,9 @@
 		A908F152285F2C3800374FE4 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				A9C29AFC289B54BD00B388E5 /* Alternateicons */,
+				A93AD0ED289B3223008C8903 /* GTNotification.h */,
+				A93AD0EE289B3223008C8903 /* GTNotification.m */,
 				A99BFA452897990A00523433 /* MineController */,
 				A99BFA44289798D300523433 /* GTFrameworks */,
 				A959CCFA288A165300204647 /* icon.bundle */,
@@ -242,6 +250,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A9C29AFC289B54BD00B388E5 /* Alternateicons */ = {
+			isa = PBXGroup;
+			children = (
+				A9C29AFD289B550000B388E5 /* ICONBLACK.png */,
+			);
+			path = Alternateicons;
+			sourceTree = "<group>";
+		};
 		B8170459653BE4A02FDF77A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C29AFE289B550000B388E5 /* ICONBLACK.png in Resources */,
 				A959CCFB288A165300204647 /* icon.bundle in Resources */,
 				A908F163285F2C3C00374FE4 /* LaunchScreen.storyboard in Resources */,
 				A908F160285F2C3C00374FE4 /* Assets.xcassets in Resources */,
@@ -360,6 +377,7 @@
 				A99BFA4B2897994500523433 /* GTMineViewController.m in Sources */,
 				A9E9ADBA2890AB6C00EF9A79 /* GTScreen.m in Sources */,
 				A908F15B285F2C3800374FE4 /* ViewController.m in Sources */,
+				A93AD0EF289B3223008C8903 /* GTNotification.m in Sources */,
 				A9AFC0AA2899ED9C00D78350 /* GTLocation.m in Sources */,
 				A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */,
 				A9DEECE32895EFC300376801 /* GTMediator.m in Sources */,

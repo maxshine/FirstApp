@@ -57,6 +57,17 @@
     return YES;
 }
 
+#pragma mark - PUSH
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    //尽量收敛到GTNotification中实现
+    //注册成功
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //注册失败
+}
+
 #pragma mark - CRASH
 
 - (void)_caughtException{

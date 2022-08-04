@@ -13,6 +13,7 @@
 #import "GTVideoCoverView.h"
 #import "GTSplashView.h"
 #import "GTLocation.h"
+#import "GTNotification.h"
 
 @interface SceneDelegate () <UITabBarControllerDelegate>
 
@@ -22,6 +23,7 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     NSLog(@"View selected");
+//    [self _changeIcon];
 }
 
 
@@ -82,6 +84,7 @@
         [[GTSplashView alloc] initWithFrame:self.window.bounds];
     })];
     [[GTLocation locationManager] checkLocationAuthorization];
+    [[GTNotification notificationManager] checkNotificationAuthorization];
 }
 
 
@@ -117,5 +120,12 @@
     // to restore the scene back to its current state.
 }
 
+- (void) _changeIcon {
+    if ([UIApplication sharedApplication].supportsAlternateIcons) {
+        [[UIApplication sharedApplication] setAlternateIconName:@"ICONBLACK" completionHandler:^(NSError * _Nullable error) {
+                    NSLog(@"Icon changed");
+        }];
+    }
+}
 
 @end
