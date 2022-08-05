@@ -16,6 +16,8 @@
 		A908F160285F2C3C00374FE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A908F15F285F2C3C00374FE4 /* Assets.xcassets */; };
 		A908F163285F2C3C00374FE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908F161285F2C3C00374FE4 /* LaunchScreen.storyboard */; };
 		A908F166285F2C3C00374FE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A908F165285F2C3C00374FE4 /* main.m */; };
+		A91357F2289C93DB0067D347 /* GTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A91357F0289C93DB0067D347 /* GTSearchBar.m */; };
+		A91357F5289C9C8B0067D347 /* GTCommentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A91357F3289C9C8B0067D347 /* GTCommentManager.m */; };
 		A914AC4528795BBC002C2F32 /* GTDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A914AC4428795BBC002C2F32 /* GTDeleteView.m */; };
 		A93AD0EF289B3223008C8903 /* GTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = A93AD0EE289B3223008C8903 /* GTNotification.m */; };
 		A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93FFABC2872A06500142F8D /* GTNormalTableViewCell.m */; };
@@ -56,6 +58,10 @@
 		A908F162285F2C3C00374FE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A908F164285F2C3C00374FE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A908F165285F2C3C00374FE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A91357F0289C93DB0067D347 /* GTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTSearchBar.m; sourceTree = "<group>"; };
+		A91357F1289C93DB0067D347 /* GTSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTSearchBar.h; sourceTree = "<group>"; };
+		A91357F3289C9C8B0067D347 /* GTCommentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCommentManager.m; sourceTree = "<group>"; };
+		A91357F4289C9C8B0067D347 /* GTCommentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTCommentManager.h; sourceTree = "<group>"; };
 		A914AC4328795BBC002C2F32 /* GTDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteView.h; sourceTree = "<group>"; };
 		A914AC4428795BBC002C2F32 /* GTDeleteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteView.m; sourceTree = "<group>"; };
 		A93AD0ED289B3223008C8903 /* GTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTNotification.h; sourceTree = "<group>"; };
@@ -194,6 +200,10 @@
 		A965D50D287F90C60083053E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A91357F4289C9C8B0067D347 /* GTCommentManager.h */,
+				A91357F3289C9C8B0067D347 /* GTCommentManager.m */,
+				A91357F1289C93DB0067D347 /* GTSearchBar.h */,
+				A91357F0289C93DB0067D347 /* GTSearchBar.m */,
 				A914AC4328795BBC002C2F32 /* GTDeleteView.h */,
 				A914AC4428795BBC002C2F32 /* GTDeleteView.m */,
 				A93FFABB2872A06500142F8D /* GTNormalTableViewCell.h */,
@@ -376,9 +386,11 @@
 			files = (
 				A99BFA4B2897994500523433 /* GTMineViewController.m in Sources */,
 				A9E9ADBA2890AB6C00EF9A79 /* GTScreen.m in Sources */,
+				A91357F2289C93DB0067D347 /* GTSearchBar.m in Sources */,
 				A908F15B285F2C3800374FE4 /* ViewController.m in Sources */,
 				A93AD0EF289B3223008C8903 /* GTNotification.m in Sources */,
 				A9AFC0AA2899ED9C00D78350 /* GTLocation.m in Sources */,
+				A91357F5289C9C8B0067D347 /* GTCommentManager.m in Sources */,
 				A93FFABD2872A06500142F8D /* GTNormalTableViewCell.m in Sources */,
 				A9DEECE32895EFC300376801 /* GTMediator.m in Sources */,
 				A908F155285F2C3800374FE4 /* AppDelegate.m in Sources */,

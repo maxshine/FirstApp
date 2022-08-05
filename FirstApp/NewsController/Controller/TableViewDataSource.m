@@ -12,6 +12,9 @@
 #import "GTDeleteView.h"
 #import "GTListItem.h"
 #import "GTMediator.h"
+#import "GTSearchBar.h"
+#import "GTCommentManager.h"
+#import "GTScreen.h"
 
 
 @implementation TableViewDataSource
@@ -30,6 +33,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+    [self.navigationItem setTitleView:({
+        GTSearchBar *searchBar = [[GTSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
+        searchBar;
+    //拉起键盘和输入框
+//        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
+//        button.backgroundColor = [UIColor lightGrayColor];
+//        [button addTarget:self action:@selector(_showCommentView) forControlEvents:UIControlEventTouchUpInside];
+//        button;
+    })];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -75,4 +92,13 @@
     CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
     [deleteView showDeleteViewFromPoint: rect.origin clickBlock: (dispatch_block_t) ^(void){NSLog(@"block action");}];
 }
+
+#pragma mark -
+
+- (void)_showCommentView{
+    [[GTCommentManager sharedManager] showCommentView];
+}
+
 @end
+
+
